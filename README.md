@@ -10,6 +10,16 @@ Run this command to start the server and open your browser automatically:
 npm run launch
 ```
 
+## Windows one-file launcher
+
+If you want a single file you can double-click on Windows, use:
+
+```bat
+start-mockup.bat
+```
+
+This starts the server and opens your default browser.
+
 ## Manual start
 
 1. Ensure you have Node.js 18+ installed.
