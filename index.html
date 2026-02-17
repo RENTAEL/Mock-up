@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VerifyHub | Email & Number Checker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero card">
+        <p class="eyebrow">Fast • Responsive • Accessible</p>
+        <h1>Verification tools that look clean on every device.</h1>
+        <p>
+          Run quick email verification checks and test whether numbers already exist in
+          your records with an easy-to-read interface.
+        </p>
+        <div class="badge-row" aria-label="Feature highlights">
+          <span class="badge">Mobile Ready</span>
+          <span class="badge">Realtime Feedback</span>
+          <span class="badge">Modern UI</span>
+        </div>
+      </section>
+
+      <section class="tools-grid">
+        <article class="card tool-card" aria-labelledby="email-title">
+          <h2 id="email-title">Email Verification</h2>
+          <p class="tool-copy">Validate format and basic domain quality checks instantly.</p>
+          <form id="emailForm" novalidate>
+            <label for="emailInput">Email address</label>
+            <div class="input-group">
+              <input
+                id="emailInput"
+                type="email"
+                placeholder="name@company.com"
+                autocomplete="email"
+                required
+              />
+              <button type="submit">Verify</button>
+            </div>
+            <p class="result" id="emailResult" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <article class="card tool-card" aria-labelledby="number-title">
+          <h2 id="number-title">Number Exists Check</h2>
+          <p class="tool-copy">Check whether a phone number appears in known records.</p>
+          <form id="numberForm" novalidate>
+            <label for="numberInput">Phone number</label>
+            <div class="input-group">
+              <input
+                id="numberInput"
+                type="tel"
+                placeholder="+1 415 555 0123"
+                inputmode="tel"
+                required
+              />
+              <button type="submit">Check</button>
+            </div>
+            <p class="helper">Tip: Include country code for best results.</p>
+            <p class="result" id="numberResult" aria-live="polite"></p>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
