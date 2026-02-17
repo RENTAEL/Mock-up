@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VerifyHub | Login + Email & Number Verification</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card login-card" id="authView">
+        <p class="eyebrow">Secure Access</p>
+        <h1>Sign in to VerifyHub</h1>
+        <p class="muted">Your login is stored locally for this mockup demo.</p>
+
+        <form id="loginForm" novalidate>
+          <label for="loginEmail">Email</label>
+          <input id="loginEmail" type="email" placeholder="name@company.com" required />
+
+          <label for="loginPassword">Password</label>
+          <input
+            id="loginPassword"
+            type="password"
+            placeholder="Enter your password"
+            minlength="6"
+            required
+          />
+
+          <button type="submit">Log In</button>
+          <p id="loginResult" class="result" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="appView" class="app-shell hidden" aria-hidden="true">
+        <section class="hero card">
+          <div class="hero-top">
+            <div>
+              <p class="eyebrow">Fast • Responsive • Accessible</p>
+              <h2>Verification tools that look clean on every device.</h2>
+              <p class="muted">
+                Verify email quality and test number existence in a modern, easy-to-use interface.
+              </p>
+            </div>
+            <div class="account-box">
+              <p class="muted small">Signed in as</p>
+              <p id="activeUser" class="active-user"></p>
+              <button id="logoutBtn" class="ghost-btn" type="button">Log out</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="tools-grid">
+          <article class="card tool-card" aria-labelledby="email-title">
+            <h3 id="email-title">Email Reality Scan</h3>
+            <p class="tool-copy">
+              Checks format, disposable patterns, and attempts MX/domain activity checks.
+            </p>
+            <form id="emailForm" novalidate>
+              <label for="emailInput">Email address</label>
+              <div class="input-group">
+                <input
+                  id="emailInput"
+                  type="email"
+                  placeholder="name@company.com"
+                  autocomplete="email"
+                  required
+                />
+                <button type="submit">Scan Email</button>
+              </div>
+              <p class="helper">Activity scan uses DNS-over-HTTPS when available.</p>
+              <p class="result" id="emailResult" aria-live="polite"></p>
+            </form>
+          </article>
+
+          <article class="card tool-card" aria-labelledby="number-title">
+            <h3 id="number-title">Number Exists Check</h3>
+            <p class="tool-copy">Check whether a phone number appears in known records.</p>
+            <form id="numberForm" novalidate>
+              <label for="numberInput">Phone number</label>
+              <div class="input-group">
+                <input
+                  id="numberInput"
+                  type="tel"
+                  placeholder="+1 415 555 0123"
+                  inputmode="tel"
+                  required
+                />
+                <button type="submit">Check Number</button>
+              </div>
+              <p class="helper">Tip: Include country code for best results.</p>
+              <p class="result" id="numberResult" aria-live="polite"></p>
+            </form>
+          </article>
+
+          <article class="card tool-card" aria-labelledby="saved-title">
+            <h3 id="saved-title">Saved Session Data</h3>
+            <p class="tool-copy">Data below is stored in local storage for mockup purposes.</p>
+            <ul id="savedList" class="saved-list"></ul>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
