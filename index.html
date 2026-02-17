@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mockup Launchpad + Verification</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+    <main class="container">
+      <header class="hero">
+        <p class="kicker">Daily Combined Mockup</p>
+        <h1>Launch fast. Verify faster.</h1>
+        <p class="hero-copy">
+          One modern screen combining quick server startup shortcuts with a clean,
+          responsive email and phone verification flow.
+        </p>
+      </header>
+
+      <div class="content-grid">
+        <section class="card" aria-labelledby="launch-shortcuts-title">
+          <div class="card-header">
+            <h2 id="launch-shortcuts-title">Easy launch shortcuts</h2>
+            <span class="pill">Quick Start</span>
+          </div>
+          <p class="section-note">Copy and run.</p>
+
+          <div class="shortcut-grid">
+            <article class="shortcut-item">
+              <h3>Python</h3>
+              <code id="cmd-python">python3 -m http.server 8080</code>
+              <button class="copy-btn" data-copy-target="cmd-python">Copy command</button>
+            </article>
+
+            <article class="shortcut-item">
+              <h3>Node.js</h3>
+              <code id="cmd-node">npx serve . -l 8080</code>
+              <button class="copy-btn" data-copy-target="cmd-node">Copy command</button>
+            </article>
+
+            <article class="shortcut-item">
+              <h3>Docker</h3>
+              <code id="cmd-docker">docker run --rm -p 8080:80 -v "$PWD":/usr/share/nginx/html:ro nginx</code>
+              <button class="copy-btn" data-copy-target="cmd-docker">Copy command</button>
+            </article>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="verification-title">
+          <div class="card-header">
+            <h2 id="verification-title">Responsive verification mockup</h2>
+            <span class="pill">Email + Phone</span>
+          </div>
+
+          <div class="toggle" role="tablist" aria-label="Verification method">
+            <button class="tab active" role="tab" aria-selected="true" aria-controls="email-panel" id="email-tab" data-panel="email-panel" tabindex="0">Email</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="phone-panel" id="phone-tab" data-panel="phone-panel" tabindex="-1">Phone</button>
+          </div>
+
+          <div class="panel-wrap">
+            <form id="email-panel" class="verify-panel active" role="tabpanel" aria-labelledby="email-tab">
+              <label for="email-input">Email address</label>
+              <input id="email-input" type="email" placeholder="you@example.com" required />
+              <label for="email-code">Verification code</label>
+              <input id="email-code" type="text" inputmode="numeric" maxlength="6" placeholder="6-digit code" required />
+              <button type="button" class="submit-btn">Verify email</button>
+            </form>
+
+            <form id="phone-panel" class="verify-panel" role="tabpanel" aria-labelledby="phone-tab" hidden>
+              <label for="phone-input">Phone number</label>
+              <input id="phone-input" type="tel" placeholder="+1 555 123 4567" required />
+              <label for="phone-code">SMS code</label>
+              <input id="phone-code" type="text" inputmode="numeric" maxlength="6" placeholder="6-digit SMS code" required />
+              <button type="button" class="submit-btn">Verify phone</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <p class="toast" id="toast" role="status" aria-live="polite"></p>
+    <script src="script.js"></script>
+  </body>
+</html>
