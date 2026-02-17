@@ -1,0 +1,15 @@
+{
+  "name": "mock-up-server-base",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple static server base for hosting mockups",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "PORT=3000 node server.js",
+    "launch": "./launch-mockup.sh"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
