@@ -1,6 +1,6 @@
 :root {
   --bg: #040712;
-  --panel: rgba(15, 26, 52, 0.7);
+  --panel: rgba(15, 26, 52, 0.75);
   --panel-border: rgba(160, 180, 255, 0.18);
   --text: #eff2ff;
   --muted: #a6b1d8;
@@ -26,10 +26,8 @@ body {
 }
 
 .page {
-  width: min(1100px, 94%);
-  margin: 2rem auto;
-  display: grid;
-  gap: 1rem;
+  width: min(1120px, 94%);
+  margin: 1.25rem auto;
 }
 
 .card {
@@ -40,8 +38,45 @@ body {
   box-shadow: var(--shadow);
 }
 
+.hidden {
+  display: none;
+}
+
+.login-card {
+  max-width: 480px;
+  margin: 8vh auto;
+  padding: 1.4rem;
+}
+
+.app-shell {
+  display: grid;
+  gap: 1rem;
+}
+
 .hero {
-  padding: clamp(1.25rem, 2vw, 2rem);
+  padding: 1.2rem;
+}
+
+.hero-top {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.account-box {
+  min-width: 200px;
+  background: rgba(7, 13, 30, 0.7);
+  border: 1px solid rgba(180, 198, 255, 0.2);
+  border-radius: 0.75rem;
+  padding: 0.8rem;
+}
+
+.active-user {
+  font-weight: 700;
+  margin: 0.25rem 0 0.75rem;
+  word-break: break-word;
 }
 
 .eyebrow {
@@ -50,34 +85,29 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  margin: 0;
 }
 
-.hero h1 {
-  margin: 0.25rem 0 0.75rem;
-  font-size: clamp(1.5rem, 4vw, 2.7rem);
-  line-height: 1.1;
+h1,
+h2,
+h3 {
+  margin: 0.35rem 0 0.7rem;
 }
 
-.hero p {
+h2 {
+  font-size: clamp(1.3rem, 3.2vw, 2rem);
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+.muted {
   color: var(--muted);
-  max-width: 65ch;
 }
 
-.badge-row {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.badge {
-  background: rgba(109, 168, 255, 0.12);
-  border: 1px solid rgba(109, 168, 255, 0.32);
-  color: #d7e7ff;
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
+.small {
   font-size: 0.82rem;
-  font-weight: 600;
 }
 
 .tools-grid {
@@ -90,19 +120,14 @@ body {
   padding: 1.1rem;
 }
 
-h2 {
-  margin: 0;
-  font-size: 1.25rem;
-}
-
 .tool-copy {
   color: var(--muted);
-  margin: 0.45rem 0 1rem;
+  margin: 0.4rem 0 0.9rem;
 }
 
 label {
   display: block;
-  margin-bottom: 0.35rem;
+  margin: 0.7rem 0 0.35rem;
   font-weight: 600;
 }
 
@@ -113,14 +138,17 @@ label {
 }
 
 input {
-  flex: 1 1 200px;
-  min-width: 0;
+  width: 100%;
   border: 1px solid rgba(220, 230, 255, 0.25);
-  background: rgba(10, 16, 35, 0.85);
+  background: rgba(10, 16, 35, 0.9);
   color: var(--text);
   border-radius: 0.7rem;
-  padding: 0.72rem 0.85rem;
+  padding: 0.74rem 0.85rem;
   outline: none;
+}
+
+.input-group input {
+  flex: 1 1 180px;
 }
 
 input:focus {
@@ -131,17 +159,17 @@ input:focus {
 button {
   border: 0;
   border-radius: 0.7rem;
-  padding: 0.72rem 1.1rem;
+  padding: 0.74rem 1.05rem;
   font-weight: 700;
   color: white;
   background: linear-gradient(180deg, var(--primary), var(--primary-strong));
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-button:hover {
-  transform: translateY(-1px);
-  opacity: 0.96;
+.ghost-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(220, 230, 255, 0.28);
 }
 
 .helper {
@@ -169,9 +197,24 @@ button:hover {
   color: var(--warning);
 }
 
+.saved-list {
+  margin: 0.3rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.saved-list li {
+  margin-bottom: 0.45rem;
+  word-break: break-word;
+}
+
 @media (max-width: 640px) {
   .page {
-    margin: 1rem auto;
+    margin: 0.8rem auto;
+  }
+
+  .login-card {
+    margin: 2vh auto;
   }
 
   button {
